@@ -1,6 +1,6 @@
 <?php
 set_time_limit(0);
-$data = file("cluster_report_engine_init_20210102.txt",FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES); //read the entire file to array by ignoring new lines and spaces
+$data = file("cluster_report_engine_init_20210101.txt",FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES); //read the entire file to array by ignoring new lines and spaces
 
 
 $final_array = array(); // create an empty array
@@ -74,15 +74,15 @@ foreach($final_array as $dat){
     $info	= curl_getinfo($curl);
     echo json_encode($res);
 
-	$log  =		    "trx_code=".$data['transactionId']. "\t".
+    $log  =		   
+                     "vm_code=".$data['vmCode']. "\t".
+                    "trx_code=".$data['transactionId']. "\t".
 					"slot=".$data['slot']. "\t".
                     "redeem_status=".$data['redeemStatus']. "\t".
-                    "response_redeem=".json_encode($res). "\t".
                     "timestamp=".$data['timestamp']. "\n"
 			;
-	file_put_contents('log_tanggal_2.log', $log, FILE_APPEND);
-    
-    sleep(3);
+	file_put_contents('log_tanggal_1(2).log', $log, FILE_APPEND);
+
     // $x++;
  
     // echo $dat['fileContent'];
