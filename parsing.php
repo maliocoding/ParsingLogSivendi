@@ -82,7 +82,7 @@ foreach($final_array as $dat){
                     "timestamp=".$data['timestamp']. "\n"
 			;
 	file_put_contents('log_tanggal_1(2).log', $log, FILE_APPEND);
-
+    sleep(3)
     // $x++;
  
     // echo $dat['fileContent'];
